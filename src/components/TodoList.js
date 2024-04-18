@@ -3,6 +3,7 @@ import Header from "./Header";
 import styles from "./TodoList.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { jwtActions, logActions } from "../store";
+const backend_url = process.env.REACT_APP_BACKEND_URL;
 function TodoList({ items, setItems }) {
 	const [inputValue, setInputValue] = useState("");
 	const [editIndex, setEditIndex] = useState(-1);
@@ -10,7 +11,7 @@ function TodoList({ items, setItems }) {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		let isMounted = true;
-		fetch("https://todo-backend-wvwp.onrender.com/auth/load", {
+		fetch(`${backend_url}auth/load`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -35,7 +36,7 @@ function TodoList({ items, setItems }) {
 	}, []);
 	useEffect(() => {
 		if (items.length === 0) return;
-		fetch("https://todo-backend-wvwp.onrender.com/auth/add", {
+		fetch(`${backend_url}auth/add`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

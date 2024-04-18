@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Header from "./Header";
 import { signActions, logActions } from "../store/index";
-const backend_url = process.env.BACKEND_URL;
+const backend_url = process.env.REACT_APP_BACKEND_URL;
 const SignUp = () => {
 	const dispatch = useDispatch();
 	const [emailVal, setEmail] = useState("");
@@ -13,7 +13,7 @@ const SignUp = () => {
 	const [success, setSuccess] = useState("");
 	useEffect(() => {
 		if (signUp) {
-			fetch(`https://todo-backend-wvwp.onrender.com/auth/signup`, {
+			fetch(`${backend_url}auth/signup`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({

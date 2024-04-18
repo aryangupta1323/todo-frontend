@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { jwtActions, signActions, logActions } from "../store/index";
 import Header from "./Header";
-const backend_url = process.env.BACKEND_URL;
+const backend_url = process.env.REACT_APP_BACKEND_URL;
 const Login = ({ setItems }) => {
 	const dispatch = useDispatch();
 	const [emailVal, setEmail] = useState("");
@@ -13,7 +13,7 @@ const Login = ({ setItems }) => {
 	const [success, setSuccess] = useState("");
 	useEffect(() => {
 		if (isLogged) {
-			fetch(`https://todo-backend-wvwp.onrender.com/auth/login`, {
+			fetch(`${backend_url}auth/login`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
