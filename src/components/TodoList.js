@@ -11,7 +11,7 @@ function TodoList({ items, setItems }) {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		let isMounted = true;
-		fetch(`${backend_url}auth/load`, {
+		fetch(`${backend_url}/auth/load`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
@@ -36,7 +36,7 @@ function TodoList({ items, setItems }) {
 	}, []);
 	useEffect(() => {
 		if (items.length === 0) return;
-		fetch(`${backend_url}auth/add`, {
+		fetch(`${backend_url}/auth/add`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

@@ -13,7 +13,7 @@ const SignUp = () => {
 	const [success, setSuccess] = useState("");
 	useEffect(() => {
 		if (signUp) {
-			fetch(`${backend_url}auth/signup`, {
+			fetch(`${backend_url}/auth/signup`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({

@@ -13,7 +13,7 @@ const Login = ({ setItems }) => {
 	const [success, setSuccess] = useState("");
 	useEffect(() => {
 		if (isLogged) {
-			fetch(`${backend_url}auth/login`, {
+			fetch(`${backend_url}/auth/login`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
