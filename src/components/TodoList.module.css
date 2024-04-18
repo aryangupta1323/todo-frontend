@@ -1,0 +1,118 @@
+.todo-list {
+  background-color: #E1F7F5;
+  color: #333;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin: 100px auto;
+}
+
+.todo-list input, .todo-list button {
+  padding: 10px;
+  margin: 5px 0; /* Updated */
+  border: 2px solid #dcdcdc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  vertical-align: middle; /* Added to align items */
+}
+
+.todo-list input {
+  width: calc(100% - 96px); /* Adjust width considering button and margin */
+  display: inline-block; /* Ensures input and button are on the same line */
+  margin-right: 10px; /* Added space between input and button */
+  background-color:#9AC8CD;
+  color:#E1F7F5;
+  opacity: 60;
+  border-radius: 15px;
+}
+
+.todo-list input.editing {
+  transform: scale(1.1);
+  border-color: #0056b3;
+}
+
+.todo-list input:focus {
+  border-color: #0056b3;
+}
+
+.todo-list ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.todo-list li {
+  background-color: #0E46A3;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+  color:#9AC8CD;
+  box-shadow: 2px 2px 5px grey;
+}
+
+.todo-list li.editing {
+  transform: scale(1.1);
+  background-color: #1E0342;
+}
+
+.todo-list li:hover {
+  background-color: #1E0342;
+}
+
+.todo-list button {
+  padding: 10px;
+  margin-left: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+.edit-del{
+  display: flex;
+}
+.add-btn {
+  background-color: #1E0342;
+  color: white;
+  width: 80px;
+}
+
+.add-btn:hover {
+  background-color: #003d82;
+}
+
+.save-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  width: 80px;
+}
+
+.save-btn:hover {
+  background-color: #45a049;
+}
+
+.edit-btn {
+  background-color: #ffc107; /* Yellow */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.delete-btn {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #bb2d3b;
+}
